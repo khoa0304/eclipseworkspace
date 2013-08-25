@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputStylesheet name="common-style.css" library="css" />
+	<title>Welcome to topicMe</title>
+	<h:outputScript library="primefaces" name="jquery/jquery.js" />
+	<script type="text/javascript">
+		
+	    function validateInput() {}
+	</script>
+</h:head>
+
+<h:body>
+	<f:view locale="en">
+		<!-- 
+	<f:view> is used for localization of all the components within f:view
+	<f:loadBundle basename="com.mycompany.MessageBundle" var="bundle" />
+    <h:outputText value="#{bundle.welcomeMessage}" />
+	 -->
+
+		<div id="page">
+
+			<div id="header">
+				<ui:insert name="header">
+					<ui:include src="/template/common/commonHeader.xhtml" />
+				</ui:insert>
+			</div>
+
+			<div id="content">
+				<ui:insert name="mainPageContent">
+					<ui:include src="/template/common/commonContent.xhtml" />
+				</ui:insert>
+			</div>
+
+			<div id="footer">
+				<ui:insert name="footer">
+					<ui:include src="/template/common/commonFooter.xhtml" />
+				</ui:insert>
+			</div>
+
+		</div>
+	</f:view>
+
+</h:body>
+</html>

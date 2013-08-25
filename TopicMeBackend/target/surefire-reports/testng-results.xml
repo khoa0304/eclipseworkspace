@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="8" passed="8">
+  <reporter-output>
+  </reporter-output>
+  <suite name="BoardDAO" duration-ms="168" started-at="2013-08-17T17:06:57Z" finished-at="2013-08-17T17:06:57Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="168" started-at="2013-08-17T17:06:57Z" finished-at="2013-08-17T17:06:57Z">
+      <class name="com.topicMe.businessdomain.dao.BoardDAOImplTest">
+        <test-method status="PASS" signature="initBackendApplicationContext()" name="initBackendApplicationContext" is-config="true" duration-ms="511" started-at="2013-08-17T17:06:57Z" finished-at="2013-08-17T17:06:57Z">
+        </test-method>
+        <test-method status="PASS" signature="init()" name="init" is-config="true" duration-ms="0" started-at="2013-08-17T17:06:57Z" finished-at="2013-08-17T17:06:57Z">
+        </test-method>
+        <test-method status="PASS" signature="testMultipleTopicsWithSameBoard()" name="testMultipleTopicsWithSameBoard" duration-ms="132" started-at="2013-08-17T17:06:57Z" finished-at="2013-08-17T17:06:57Z">
+        </test-method>
+        <test-method status="PASS" signature="testPersistBoard()" name="testPersistBoard" duration-ms="6" started-at="2013-08-17T17:06:57Z" finished-at="2013-08-17T17:06:57Z">
+        </test-method>
+        <test-method status="PASS" signature="testPersistBoardWithTopic()" name="testPersistBoardWithTopic" duration-ms="28" started-at="2013-08-17T17:06:57Z" finished-at="2013-08-17T17:06:57Z">
+        </test-method>
+      </class>
+    </test>
+  </suite>
+  <suite name="Command line suite" duration-ms="14355" started-at="2013-08-17T17:06:58Z" finished-at="2013-08-17T17:07:12Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="14355" started-at="2013-08-17T17:06:58Z" finished-at="2013-08-17T17:07:12Z">
+      <class name="com.topicMe.test.util.AbstractBackendTest">
+        <test-method status="PASS" signature="initBackendApplicationContext()" name="initBackendApplicationContext" is-config="true" duration-ms="526" started-at="2013-08-17T17:06:57Z" finished-at="2013-08-17T17:06:58Z">
+        </test-method>
+      </class>
+      <class name="com.topicMe.tika.ExtractHTMLTest">
+        <test-method status="PASS" signature="testExtractHTML()" name="testExtractHTML" duration-ms="886" started-at="2013-08-17T17:06:58Z" finished-at="2013-08-17T17:06:59Z">
+        </test-method>
+        <test-method status="PASS" signature="tearDownMethod()" name="tearDownMethod" is-config="true" duration-ms="1" started-at="2013-08-17T17:06:59Z" finished-at="2013-08-17T17:06:59Z">
+        </test-method>
+        <test-method status="PASS" signature="testExtractPDF()" name="testExtractPDF" duration-ms="3943" started-at="2013-08-17T17:06:59Z" finished-at="2013-08-17T17:07:03Z">
+        </test-method>
+        <test-method status="PASS" signature="tearDownMethod()" name="tearDownMethod" is-config="true" duration-ms="0" started-at="2013-08-17T17:07:03Z" finished-at="2013-08-17T17:07:03Z">
+        </test-method>
+        <test-method status="PASS" signature="testExtractWebPage()" name="testExtractWebPage" duration-ms="2604" started-at="2013-08-17T17:07:03Z" finished-at="2013-08-17T17:07:05Z">
+        </test-method>
+        <test-method status="PASS" signature="testExtractWebPage2()" name="testExtractWebPage2" duration-ms="6920" started-at="2013-08-17T17:07:05Z" finished-at="2013-08-17T17:07:12Z">
+        </test-method>
+        <test-method status="PASS" signature="tearDownMethod()" name="tearDownMethod" is-config="true" duration-ms="0" started-at="2013-08-17T17:07:05Z" finished-at="2013-08-17T17:07:05Z">
+        </test-method>
+        <test-method status="PASS" signature="tearDownMethod()" name="tearDownMethod" is-config="true" duration-ms="0" started-at="2013-08-17T17:07:12Z" finished-at="2013-08-17T17:07:12Z">
+        </test-method>
+      </class>
+    </test>
+  </suite>
+  <suite name="UserService" duration-ms="239" started-at="2013-08-17T17:06:56Z" finished-at="2013-08-17T17:06:57Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="239" started-at="2013-08-17T17:06:56Z" finished-at="2013-08-17T17:06:57Z">
+      <class name="com.topicMe.user.service.UserServiceTest">
+        <test-method status="PASS" signature="initBackendApplicationContext()" name="initBackendApplicationContext" is-config="true" duration-ms="5155" started-at="2013-08-17T17:06:51Z" finished-at="2013-08-17T17:06:56Z">
+        </test-method>
+        <test-method status="PASS" signature="firstTest()" name="firstTest" duration-ms="221" started-at="2013-08-17T17:06:56Z" finished-at="2013-08-17T17:06:57Z">
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>

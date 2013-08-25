@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="Khoa-THINK" name="com.topicMe.user.service.UserServiceTest" tests="1" failures="0" timestamp="18 Aug 2013 00:06:57 GMT" time="0.239" errors="0">
+  <testcase name="firstTest" time="0.221" classname="com.topicMe.user.service.UserServiceTest"/>
+</testsuite>

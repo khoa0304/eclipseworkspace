@@ -1,0 +1,93 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Welcome to TopicMe</title>
+</h:head>
+<h:body>
+	<ui:composition template="/template/common/commonLayout.xhtml">
+
+		<ui:define name="content">
+			<h:form id="newBoardForm">
+				<p:panel id="newBoardPanel" header="My New Board"
+					styleClass="addBoardPanel">
+
+					<h:panelGrid columns="1">
+						<p:commandButton value="Add New Board" onclick="dlg.show()" />
+					</h:panelGrid>
+
+				</p:panel>
+
+				<p:draggable for="newBoardPanel" />
+			</h:form>
+		
+			<h:form id="dialogForm">
+					<p:panelGrid id="newBoardInfoDialog"
+						binding="#{createBoardMB.dynamicNewBoardPanelGrid}">
+						<p:row>
+							<p:column rowspan="2" colspan="1">
+								<h:outputLabel for="boardName" value="Board Name: " />
+							</p:column>
+							<p:column rowspan="2" colspan="1">
+								<p:inputText id="boardName" value="#{createBoardMB.name}"
+									styleClass="formInput" 
+									required="true"
+									requiredMessage="Board Name is required"
+									validatorMessage="Board Name should be of length from 5 to 50 chars">
+
+									<f:validateLength minimum="2" maximum="50" for="boardName" />
+									<p:ajax id="btnBoardName" event="blur" process="boardName" update="inputValidationMessage"/>
+								</p:inputText>
+								<p:message id="inputValidationMessage" showDetail="true"
+									for="boardName" display="both" />
+							</p:column>
+						</p:row>
+
+						<p:row>
+							<p:column rowspan="2" colspan="1">
+								<h:outputLabel for="boardDescription"
+									value="Board Description: " />
+							</p:column>
+							<p:column rowspan="2" colspan="1">
+								<p:inputText id="boardDescription"
+									value="#{createBoardMB.description}" styleClass="formInput"
+								
+									validatorMessage="Board Description should be of length from 5 to 50 chars">
+									<f:validateLength minimum="0" maximum="50"
+										for="boardDescription" />
+								</p:inputText>
+								<p:message for="boardDescription" />
+							</p:column>
+						</p:row>
+
+						<p:row>
+							<p:column rowspan="2" colspan="1">
+								<h:outputLabel for="boardCategory" value="Board Category: " />
+							</p:column>
+							<p:column rowspan="2" colspan="1">
+								<p:inputText id="boardCategory"
+									value="#{createBoardMB.boardCategory}" styleClass="formInput"
+									validatorMessage="Board Category should be of length from 5 to 50 chars">
+									<f:validateLength minimum="0" maximum="50" for="boardCategory" />
+								</p:inputText>
+								<p:message for="boardCategory" />
+
+							</p:column>
+						</p:row>
+	               </p:panelGrid>
+				   <p:commandButton id="submitButton" value="Create"
+								actionListener="#{createBoardMB.createBoard}"
+								icon="ui-icon-check"
+								immediate="true" />
+				
+				
+			</h:form>
+
+		</ui:define>
+
+	</ui:composition>
+
+</h:body>
+</html>

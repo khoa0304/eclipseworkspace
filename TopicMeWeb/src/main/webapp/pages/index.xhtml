@@ -1,0 +1,112 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Welcome to TopicMe</title>
+</h:head>
+<h:body>
+	<ui:composition template="/template/common/commonLayout.xhtml">
+
+		<ui:define name="mainPageContent">
+
+			<h:form id="newBoardForm">
+				<p:growl id="growl" showDetail="true" />
+
+				<p:dashboard id="dashboard" binding="#{dashboardBean.dashBoard}"
+					model="#{dashboardBean.model}">
+					<p:ajax event="reorder" listener="#{dashboardBean.handleReorder}"
+						update="growl" />
+
+
+					<p:panel id="newBoardPanel" header="Board"
+						styleClass="addBoardPanel">
+						<h:panelGrid columns="1" id="panelGridCreateBoardTemplate">
+							<p:commandButton value="Add New Board"/>
+						</h:panelGrid>
+					</p:panel>
+				
+				</p:dashboard>
+			</h:form>
+	
+			<h:form id="boardDialogForm">
+
+
+				<p:dialog id="boardDialog" header="Add New Board	" widgetVar="boardDialog"
+					resizable="false" showEffect="fade" closeOnEscape="true">
+
+					<p:message id="inputValidationMessage" showDetail="true"
+						for="boardName" display="both" />
+
+
+					<p:panelGrid id="newBoardInfoDialog">
+						<p:row>
+							<p:column rowspan="1" colspan="1">
+								<h:outputLabel for="boardName" value="Board Name: * " />
+							</p:column>
+							<p:column rowspan="1" colspan="1">
+								<p:inputText id="boardName" value="#{dashboardBean.name}"
+									styleClass="formInput" required="true"
+									requiredMessage="Board Name is required and should be of length from 2 to 50 chars"
+									validatorMessage="Board Name should be of length from 2 to 50 chars">
+									<f:validateLength minimum="2" maximum="50" for="boardName" />
+									<p:ajax event="blur" update="boardName,inputValidationMessage"
+										process="boardName" />
+								</p:inputText>
+							</p:column>
+						</p:row>
+
+						<p:row>
+							<p:column rowspan="1" colspan="1">
+								<h:outputLabel for="boardDescription"
+									value="Board Description: " />
+							</p:column>
+							<p:column rowspan="1" colspan="1">
+								<p:inputText id="boardDescription"
+									value="#{dashboardBean.description}" styleClass="formInput"
+									validatorMessage="Board Description should be of length from 5 to 50 chars">
+									<f:validateLength minimum="2" maximum="50"
+										for="boardDescription" />
+								</p:inputText>
+
+							</p:column>
+						</p:row>
+
+						<p:row>
+							<p:column rowspan="1" colspan="1">
+								<h:outputLabel for="boardCategory" value="Board Category: " />
+							</p:column>
+							<p:column rowspan="1" colspan="1">
+								<p:inputText id="boardCategory"
+									value="#{dashboardBean.boardCategory}" styleClass="formInput"
+									validatorMessage="Board Category should be of length from 5 to 50 chars">
+									<f:validateLength minimum="0" maximum="50" for="boardCategory" />
+								</p:inputText>
+							</p:column>
+						</p:row>
+					</p:panelGrid>
+
+					<p:commandButton id="addBoardButton" value="Add"
+						action="#{dashboardBean.createBoard}" icon="ui-icon-check"
+						iconPos="left" ajax="false"
+						style="float:right;">
+					</p:commandButton>
+
+					<p:commandButton id="cancelAddBoardButton" value="Cancel"
+						action="#{dashboardBean.clearBoard}"
+						icon="ui-icon-close" iconPos="right" onclick="dlg.hide()"
+						ajax="false" style="float:right;">
+					</p:commandButton>
+
+				</p:dialog>
+			</h:form>
+
+
+		</ui:define>
+
+	</ui:composition>
+	
+
+</h:body>
+</html>

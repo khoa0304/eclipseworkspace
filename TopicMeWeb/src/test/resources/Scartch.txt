@@ -1,0 +1,70 @@
+<!-- 
+			<h:form id="dialogForm">
+				<p:dialog id="dialog" header="Add New Board	" widgetVar="dlg"
+					resizable="false">
+			
+					<p:panelGrid id="newBoardInfoDialog"
+						binding="#{createBoardMB.dynamicNewBoardPanelGrid}">
+						<p:row>
+							<p:column rowspan="2" colspan="1">
+								<h:outputLabel for="boardName" value="Board Name: " />
+							</p:column>
+							<p:column rowspan="2" colspan="1">
+								<p:inputText id="boardName" value="#{createBoardMB.name}"
+									styleClass="formInput" 
+									required="true"
+									requiredMessage="Board Name is required"
+									validatorMessage="Board Name should be of length from 5 to 50 chars">
+
+									<f:validateLength minimum="2" maximum="50" for="boardName" />
+									<p:ajax id="btnBoardName" event="blur" process="boardName" update="inputValidationMessage"/>
+								</p:inputText>
+								<p:message id="inputValidationMessage" showDetail="true"
+									for="boardName" display="both" />
+							</p:column>
+						</p:row>
+
+						<p:row>
+							<p:column rowspan="2" colspan="1">
+								<h:outputLabel for="boardDescription"
+									value="Board Description: " />
+							</p:column>
+							<p:column rowspan="2" colspan="1">
+								<p:inputText id="boardDescription"
+									value="#{createBoardMB.description}" styleClass="formInput"
+								
+									validatorMessage="Board Description should be of length from 5 to 50 chars">
+									<f:validateLength minimum="0" maximum="50"
+										for="boardDescription" />
+								</p:inputText>
+								<p:message for="boardDescription" />
+							</p:column>
+						</p:row>
+
+						<p:row>
+							<p:column rowspan="2" colspan="1">
+								<h:outputLabel for="boardCategory" value="Board Category: " />
+							</p:column>
+							<p:column rowspan="2" colspan="1">
+								<p:inputText id="boardCategory"
+									value="#{createBoardMB.boardCategory}" styleClass="formInput"
+									validatorMessage="Board Category should be of length from 5 to 50 chars">
+									<f:validateLength minimum="0" maximum="50" for="boardCategory" />
+								</p:inputText>
+								<p:message for="boardCategory" />
+
+							</p:column>
+						</p:row>
+	               </p:panelGrid>
+						<p:commandButton id="submitButton" value="Create"
+								actionListener="#{createBoardMB.createBoard}"
+								oncomplete="dlg.hide();"
+								icon="ui-icon-check"
+								process="dialogForm"
+								update="dialogForm"
+								immediate="true" />
+				</p:dialog>
+			</h:form>
+			
+	 -->		
+	

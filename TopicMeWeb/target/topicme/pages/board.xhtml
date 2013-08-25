@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Welcome to TopicMe</title>
+</h:head>
+<h:body>
+	<ui:composition template="/template/common/commonLayout.xhtml">
+
+		<ui:define name="mainPageContent">
+
+			<h:form id="newTopicForm">
+				<p:panel id="newTopicPanel" header="Topic"
+					styleClass="addTopicPanel">
+
+					<h:panelGrid columns="1">
+						<p:commandButton value="Add New Topic" onclick="topicDialog.show()"  />
+					</h:panelGrid>
+
+				</p:panel>
+
+			</h:form>
+
+
+			<h:form id="topicDialogForm">
+
+				<p:dialog id="topicDialog" header="Add New Topic" widgetVar="topicDialog"
+					resizable="false" showEffect="fade" closeOnEscape="true">
+
+					<p:panelGrid id="newTopicInfoDialog">
+						<p:row>
+							<p:column rowspan="1" colspan="1">
+								<h:outputLabel for="topicName" value="Topic Name: * " />
+							</p:column>
+							<p:column rowspan="1" colspan="1">
+								<p:inputText id="topicName" value="#{topicMB.name}"
+									styleClass="formInput" required="true"
+									requiredMessage="Topic Name is required and should be of length from 2 to 50 chars"
+									validatorMessage="Topic Name should be of length from 2 to 50 chars">
+									<f:validateLength minimum="2" maximum="50" for="topicName" />
+									<p:ajax event="blur" update="topicName" process="topicName" />
+								</p:inputText>
+							</p:column>
+						</p:row>
+
+					</p:panelGrid>
+
+					<p:commandButton id="addTopicButton" value="Add"
+						action="#{dashboardBean.createBoard}" icon="ui-icon-check"
+						iconPos="right" process="dialogForm" ajax="false"
+						style="float:right;">
+					</p:commandButton>
+
+					<p:commandButton id="cancelAddBoardButton" value="Cancel"
+						icon="ui-icon-close" iconPos="right" onclick="dlg.hide()"
+						ajax="false" style="float:right;">
+					</p:commandButton>
+
+				</p:dialog>
+			</h:form>
+
+		</ui:define>
+
+	</ui:composition>
+
+</h:body>
+</html>

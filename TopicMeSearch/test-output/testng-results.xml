@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="5200" started-at="2013-07-22T20:45:00Z" finished-at="2013-07-22T20:45:05Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="5200" started-at="2013-07-22T20:45:00Z" finished-at="2013-07-22T20:45:05Z">
+      <class name="example.lucene.LunceneIndexWriterTest">
+        <test-method status="PASS" signature="testMemIndex()[pri:0, instance:example.lucene.LunceneIndexWriterTest@1d04966e]" name="testMemIndex" duration-ms="5188" started-at="2013-07-22T13:45:00Z" finished-at="2013-07-22T13:45:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMemIndex -->
+      </class> <!-- example.lucene.LunceneIndexWriterTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
